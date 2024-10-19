@@ -1,4 +1,4 @@
- local Players = game:GetService("Players")
+local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local LocalPlayer = Players.LocalPlayer
 local Mouse = game.Players.LocalPlayer:GetMouse()
@@ -6,8 +6,8 @@ local CamlockState = true
 local Prediction = 0.16581
 local HorizontalPrediction = 0.139
 local VerticalPrediction = 0.139
-local XPrediction = 0.1545
-local YPrediction = 0.1454
+local XPrediction = 0.1454
+local YPrediction = 0.1545
 local Players = game:GetService("Players")	
 local LP = Players.LocalPlayer	
 local Mouse = LP:GetMouse()	
@@ -42,7 +42,7 @@ local enemy = nil
 local highlight = Instance.new("Highlight")
 highlight.FillColor = Color3.fromRGB(255, 10, 235)
 highlight.OutlineColor = Color3.fromRGB(1, 1, 1)
-highlight.FillTransparency = 0.6
+highlight.FillTransparency = 0.3
 highlight.OutlineTransparency = 0
 
 RunService.Heartbeat:Connect(function()
@@ -82,7 +82,7 @@ gui.Parent = game.CoreGui
 local TextButton = Instance.new("TextButton")
 TextButton.Text = "Ancient"
 TextButton.TextSize = 35
-TextButton.TextColor3 = Color3.new(255, 10, 235)
+TextButton.TextColor3 = Color3.new(1, 1, 1)
 TextButton.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1) -- Dark shade of black
 TextButton.BorderColor3 = Color3.new(0.3, 0.3, 0.3) -- Slightly lighter shade of black
 TextButton.BorderSizePixel = 4
@@ -107,7 +107,7 @@ TextButton.TextColor3 = Color3.new(0, 255, 0)
         end
     else
         TextButton.Text = "Ancient"
-TextButton.TextColor3 = Color3.new(255, 10, 235)
+TextButton.TextColor3 = Color3.new(1, 1, 1)
         getgenv().SilentAimEnabled = false
         CamlockState = false
         enabled = false
@@ -132,14 +132,13 @@ getgenv().HitPart = "UpperTorso"
 getgenv().Prediction_SilentAim = 0.1201
 getgenv().SilentAimEnabled = false  -- Default to disabled
 getgenv().SilentAimShowFOV = false  -- Default to showing FOV
-getgenv().SilentAimFOVSize = 50
-getgenv().SilentAimFOVTransparency = 0.3
+getgenv().SilentAimFOVSize = 90
+getgenv().SilentAimFOVTransparency = 1
 getgenv().SilentAimFOVThickness = 2.0
-getgenv().SilentAimFOVColor = Color3.new(255, 10, 235)
+getgenv().SilentAimFOVColor = Color3.new(255, 0, 0)
 local SilentAimFOVCircle = Drawing.new("Circle")
 SilentAimFOVCircle.Color = getgenv().SilentAimFOVColor
-SilentAimFOVCircle.Visible
-getgenv().SilentAimShowFOV
+SilentAimFOVCircle.Visible = getgenv().SilentAimShowFOV
 SilentAimFOVCircle.Filled = false
 SilentAimFOVCircle.Radius = getgenv().SilentAimFOVSize
 SilentAimFOVCircle.Transparency = getgenv().SilentAimFOVTransparency
